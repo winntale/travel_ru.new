@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Трэвел.ру</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/css/countries.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="background_countries" id="background_main" style="background-image: url(images/greece/main.jpg)" alt="img">
+    <h1 id="text-travel">Греция</h1>
+    <ul class="chain-links">
+        <li><a href="/" title="Переход на главную страницу">Главная</a></li>
+        <li>Греция</li>
+    </ul>
+    <header>
+        <nav class="container">
+            <a class="logo" href="/" title="Переход на главную страницу">
+            <img src="images/mainPage/logo.png" alt="img">
+            </a>
+            <div class="burger"><span></span></div>
+            <form id="searchform">
+                <input class="search-text" id="text-to-find" value="" placeholder="Искать на странице..">
+                <button class="clear-button" type="submit" onclick="FindOnPage('text-to-find',false); return false;"><i class="fa-solid fa-xmark"></i></button>
+                <button class="submit-button" type="submit" onclick="FindOnPage('text-to-find',true); return false;"><i class="fa fa-search"></i></button>
+            </form>
+            <ul id="menu">
+            <li><a class="menu_element" href="" title="Вернуться главную страницу">Главная</a></li>
+            <li>
+                <a class="menu_element">Каталог стран</a>
+                <ul>
+                    <li><a href="/turkey" title="Подробнее о Турции">Турция</a></li> 
+                    <li><a href="/oae" title="Подробнее об ОАЭ">ОАЭ</a></li>
+                    <li><a href="/egypt" title="Подробнее о Египте">Египет</a></li>
+                    <li><a class="country-active" style="text-decoration: 1px underline;">Греция</a></li>
+                    <li><a href="/italy" title="Подробнее об Италии">Италия</a></li>
+                    <li><a href="/france" title="Подробнее о Франции">Франция</a></li>
+                    <li><a href="/china" title="Подробнее о Китае">Китай</a></li>
+                    <li><a href="/korea" title="Подробнее о Корее">Корея</a></li>
+                    <li><a href="/vietnam" title="Подробнее о Вьетнаме">Вьетнам</a></li>
+                    <li><a href="/japan" title="Подробнее о Японии">Япония</a></li>
+                </ul>
+            </li>
+            <li><a class="menu_element" href="/#partners" title="Блок с ссылками на партнёров-спонсоров">Партнёры</a></li>
+            <li><a class="menu_element" href="/#reviews" title="Отзывы о компании">Отзывы</a></li>
+            <li>
+                <a class="menu_element">Компания</a>
+                <ul>
+                  <li><a href="/aboutUs" title="Подробнее о нашей компании">О нас</a></li>
+                  <li><a style="font-size: 18px" href="/feedback" title="Ссылка для связи с нами">Обратная связь</a></li>
+                  <li><a href="/qna" title="Ответы на часто задаваемые вопросы">Q&A</a></li>
+                </ul>
+              </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<a class="buttons-top-footer" id="toFooter" style="rotate: 180deg" href="#bottom" title="Перейти к низу страницы">^</a>
+<a class="buttons-top-footer" id="toTop" href="#background_main" title="Перейти к верху страницы">^</a>
+
+<h1 class="main-text">Краткая характеристика страны</h1>
+<div class="country-characteristics-container">
+<div class="country-characteristics-table">
+    <div class="cc-element"> 
+        <h1>Дата основания</h1>
+        <h2>{{foundation}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Официальный язык</h1>
+        <h2>{{lang}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Форма правления</h1>
+        <h2>{{government_form}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Территория</h1>
+        <h2>{{territory}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Население</h1>
+        <h2>{{population}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Столица</h1>
+        <h2>{{capital}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Валюта</h1>
+        <h2>{{currency}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Часовой пояс</h1>
+        <h2>{{time_zone}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Крупнейшие города</h1>
+        <h2>{{largest_cities}}</h2>
+    </div>
+</div>
+<h2 class="country-info">{{country_info}}</h2>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text">Ближайшие авиарейсы</h1>
+<h2 style="max-width: 70vw; text-align: center; margin: 20px auto;">Прямые перелеты в Грецию из России с февраля 2022 года временно приостановлены. Но полететь в страну можно с пересадками в других странах. 
+    Вы можете воспользоваться предложенным ниже маршрутом.</h2>
+<div style="display: flex; justify-content: center;">
+    <iframe class="avia-informer" src="https://rasp.yandex.ru/informers/v2/search/?fromId=c213&amp;toId=c11508&amp;size=5&amp;color=1"></iframe>
+    <iframe class="avia-informer" src="https://rasp.yandex.ru/informers/v2/search/?fromId=c11508&amp;toId=c10418&amp;size=5&amp;color=1"></iframe>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text" id="places-turkey">Туристические места Греции</h1> <!-- менять -->
+<div class="filters-buttons" id="filterPlaces-buttons">
+    <button class="filter-btn active" onclick="filterPlaceSelection('all')">Показать все</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('historical')">История</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('museums')">Музеи</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('athens')">Места Афин</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('krit')">Места Крита</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('mountains')">Горы</button>
+</div>
+
+<div class="filters-container"> <!-- менять -->
+    <div class="filter Place historical athens" style="background-image: url(images/greece/places/akropol.jpg);" alt="img">
+        <h1>Афинский акрополь</h1>
+        <a href="/inDev" title="Подробнее об Афинском акрополе">
+        <div class="filter-mask">
+            <h2>Первые строения в Афинах стали появляться за много веков до нашей эры — это были храмы, скульптуры, царские резиденции и монументы, 
+                возведенные в честь богов. До наших дней дошли далеко не все, а из ныне существующих стоит отметить визитную карточку Греции — 
+                Парфенон — главный храм в городе, посвященный богине Афине.</h2>
+            <h3 style="margin-top: 0px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+    <div class="filter Place museums athens" style="background-image: url(images/greece/places/akropol-museum.jpg);" alt="img">
+        <h1>Новый музей Акрополя</h1>
+        <a href="/inDev" title="Подробнее о Новом музее Акрополя">
+        <div class="filter-mask">
+            <h2>Музей Акрополя — одна из самых посещаемых туристических достопримечательностей Афин. Это ультрасовременное сооружение из стекла и стали, 
+                спроектированное швейцарским архитектором Бернаром Чуми.</h2>
+            <h3 style="margin-top: 50px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+    <div class="filter Place historical athens" style="background-image: url(images/greece/places/hephaestus-temple.jpg);" alt="img">
+        <h1>Храм Гефеста</h1>
+        <a href="/inDev" title="Подробнее о Храме Гефеста">
+        <div class="filter-mask">
+            <h2>В разные времена историки спорили о том, кому посвящен храм. Одни утверждали, что это место поклонения Аресу — богу войны, другие 
+                приписывали храм Тесею — сыну Посейдона. Однако последние исследования показывают, что в этом месте поклонялись Гефесту — божеству-покровителю 
+                кузнечного ремесла.</h2>
+            <h3 style="margin-top: 0px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+    <div class="filter Place mountains athens" style="background-image: url(images/greece/places/likavit-mountain.jpg);" alt="img">
+        <h1>Гора Ликавит</h1>
+        <a href="/inDev" title="Подробнее о Горе Ликавит">
+        <div class="filter-mask">
+            <h2>Посреди греческой столицы расположился каменистый холм высотой в 263 метра, названный горой Ликавит. Однако до этого она носила имя Святого Георгия 
+                из-за одноименного храма, возведенного прямо на вершине.</h2>
+            <h3 style="margin-top: 67px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+    <div class="filter Place krit" style="background-image: url(images/greece/places/samaria-gorge.jpg);" alt="img">
+        <h1>Самарийское ущелье</h1>
+        <a href="/inDev" title="Подробнее о Самарийском ущелье">
+        <div class="filter-mask">
+            <h2>Самарийское ущелье – это каньон длиной 16 км на юго-западе Крита, который ежегодно посещают более четверти миллиона туристов.</h2>
+            <h3 style="margin-top: 133px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+    <div class="filter Place krit" style="background-image: url(images/greece/places/elaphonisi.jpg);" alt="img">
+        <h1>Пляж Элафониси</h1>
+        <a href="/inDev" title="Подробнее о Пляже Элафониси">
+        <div class="filter-mask">
+            <h2>Сказочный пляж Элафониси – достопримечательность, которая впечатляет, в первую очередь нежно-розовым цветом песка. Это явление обусловлено 
+                примесью специфических ракушек и кораллов, которые становятся лиловыми в вечерние часы.</h2>
+            <h3 style="margin-top: 67px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text">Отели Греции</h1> <!-- менять -->
+<div class="filters-buttons" id="filterHotels-buttons">
+    <button class="filter-btn active" onclick="filterHotelSelection('all')">Показать все</button>
+    <button class="filter-btn" onclick="filterHotelSelection('athens')">Отели Афин</button>
+    <button class="filter-btn" onclick="filterHotelSelection('krit')">Отели Крита</button>
+    <button class="filter-btn" onclick="filterHotelSelection('all-inclusive')">Всё включено</button>
+    <button class="filter-btn" onclick="filterHotelSelection('breakfast-inclusive')">Завтрак включён</button>
+    <button class="filter-btn" onclick="filterHotelSelection('sea-visible')">Вид на море</button>
+    <button class="filter-btn" onclick="filterHotelSelection('3star')">3✩</button>
+    <button class="filter-btn" onclick="filterHotelSelection('4star')">4✩</button>
+    <button class="filter-btn" onclick="filterHotelSelection('5star')">5✩</button>
+</div>
+
+<div class="filters-container"> <!-- менять -->
+    <div class="filter Hotel 3star athens" style="background-image: url(images/greece/hotels/socrates-hotel.jpg);" alt="img">
+        <h1>Socrates Hotel</h1>
+        <a href="/inDev" title="Подробнее о Socrates Hotel">
+        <div class="filter-mask">
+            <h2>От отеля гости могут легко добраться до нового музея Акрополя, храма Парфенон и района Плака. Традиционный рынок Монастираки и площадь Омония 
+                находятся в нескольких минутах ходьбы. Неподалеку работает супермаркет.</h2>
+            <h3 style="margin-top: 67px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Hotel 4star athens breakfast-inclusive" style="background-image: url(images/greece/hotels/titania-hotel.jpg);" alt="img">
+        <h1>Titania Hotel</h1>
+        <a href="/inDev" title="Подробнее о Titania Hotel">
+        <div class="filter-mask">
+            <h2>Оформленный в классическом стиле отель Titania расположен в историческом и коммерческом центре Афин. На территории работает фитнес-центр, а из 
+                удостоенного наград ресторана на крыше открывается панорамный вид на город. К услугам гостей звукоизолированные номера с бесплатным Wi-Fi.</h2>
+            <h3 style="margin-top: 0px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Hotel 5star all-inclusive athens" style="background-image: url(images/greece/hotels/grecotel.jpg);" alt="img">
+        <h1>Grecotel Pallas</h1>
+        <a href="/inDev" title="Подробнее о Grecotel Pallas">
+        <div class="filter-mask">
+            <h2>Grecotel Pallas Athena находится в городе Афины. Grecotel Pallas Athena входит в сеть отелей Grecotel. До центра города - 200 м. До Международного 
+                аэропорта Афины имени Элефтериоса Венизелоса (Athens International Airport "Eleftherios Venizelos") - 37 км.</h2>
+            <h3 style="margin-top: 16px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Hotel sea-visible 3star lara-hotel breakfast-inclusive" style="background-image: url(images/greece/hotels/sheraton.jpg);" alt="img">
+        <h1>Sheraton Rhodes</h1>
+        <a href="/inDev" title="Подробнее о Sheraton Rhodes">
+        <div class="filter-mask">
+            <h2>Входит в состав крупнейшей в мире международной гостиничной сети Marriott International и является брендом с самым широким географическим охватом — 
+                400 регионов в 70 странах мира. Его недвижимость расположена в популярных туристических городах, курортных зонах и центрах деловой активности.</h2>
+            <h3 style="margin-top: 16px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Hotel breakfast-inclusive 5star athens" style="background-image: url(images/greece/hotels/hilton.jpg);" alt="img">
+        <h1>Hilton Athens</h1>
+        <a href="/inDev" title="Подробнее о Hilton Athens">
+        <div class="filter-mask">
+            <h2>В каждом из светлых и просторных номеров с элегантным интерьером имеются бесплатные туалетно-косметические принадлежности и минеральная 
+                вода в бутылках. В числе стандартных удобств — сейф, ванна и душ, утюг/гладильная доска и фен.</h2>
+            <h3 style="margin-top: 50px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Hotel all-inclusiv 5star lara-hotel breakfast-inclusive" style="background-image: url(images/greece/hotels/marriott.jpg);" alt="img">
+        <h1>Athens Marriott</h1>
+        <a href="/inDev" title="Подробнее об Athens Marriott">
+        <div class="filter-mask">
+            <h2>Marriott International — крупнейшая гостиничная сеть, лидирующая по количеству номеров (свыше 1400000).
+                Сегодня Marriott International принадлежат более 7000 объектов недвижимости в 131 стране и 30 гостиничных брендов.</h2>
+            <h3 style="margin-top: 67px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text">Рестораны Греции</h1> <!-- менять -->
+<div class="filters-buttons" id="filterRestaurants-buttons">
+    <button class="filter-btn active" onclick="filterRestaurantSelection('all')">Показать все</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('athens')">Рестораны Афин</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('sea-beach')">На берегу моря</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('seafood')">Морепродукты</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('traditional-kitchen')">Традиционная кухня</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('expensive')">$$$</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('reasonable-price')">$$</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('cheap')">$</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('fast-food')">Фаст-фуд</button>
+</div>
+
+<div class="filters-container"> <!-- менять -->
+    <div class="filter Restaurant reasonable-price traditional-kitchen seafood sea-visible" style="background-image: url(images/greece/restaurants/poseidonia.jpg);" alt="img">
+        <h1>Poseidonia Restaurant</h1>
+        <a href="/inDev" title="Подробнее о Poseidonia Restaurant Cafe">
+        <div class="filter-mask">
+            <h2>Poseidonia Restaurant Cafe специализируется на греческой кухне. В этом месте стоит заказать аппетитные грибы, мясо ягнёнка и осьминог на гриле. 
+                Это заведение знаменито неплохим домашним вином, белым вином или пивом. Из напитков здесь стоит попробовать хороший кофе.</h2>
+            <h3 style="margin-top: 33px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Restaurant reasonable-price fast-food athens" style="background-image: url(images/greece/restaurants/starbucks.jpg);" alt="img">
+        <h1>Starbucks</h1>
+        <a href="/inDev" title="Подробнее о Starbucks">
+        <div class="filter-mask">
+            <h2>Старбакс – в некотором роде феномен в розничной продаже кофе. Это одна из первых и уж точно 
+                самая известная сеть кофеен, открывшая состоянием на 2023 год более 30 тысяч представительств по всему миру. </h2>
+            <h3 style="margin-top: 67px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Restaurant expensive seafood traditional-kitchen athens" style="background-image: url(images/greece/restaurants/ctc.jpg);" alt="img">
+        <h1>CTC Urban Gastronomy</h1>
+        <a href="/inDev" title="Подробнее о CTC Urban Gastronomy">
+        <div class="filter-mask">
+            <h2>В CTC Urban Gastronomy стоит заказать блюда греческой и средиземноморской кухонь. Здесь вы можете заказать вкусно приготовленный 
+                амюз-буш, рыбу и суп из лобстера. Посетители могут попробовать хороший парфе и неплохое мороженое.</h2>
+            <h3 style="margin-top: 50px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Restaurant cheap fast-food athens" style="background-image: url(images/greece/restaurants/burger-king.jpg);" alt="img">
+        <h1>Burger King</h1>
+        <a href="/inDev" title="Подробнее о Burger king">
+        <div class="filter-mask">
+            <h2>Американская сеть ресторанов быстрого питания Burger King, базирующаяся во Флориде имеет огромное количество 
+                точек по всему миру. Считается, что Бургер Кинг – главный конкурент такого гиганта, как Макдональдс.</h2>
+            <h3 style="margin-top: 67px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Restaurant reasonable-price traditional-kitchen sea-visible" style="background-image: url(images/greece/restaurants/cavo-dimo.jpg);" alt="img">
+        <h1>Cavo Dimo</h1>
+        <a href="/inDev" title="Подробнее о Cavo Dimo">
+        <div class="filter-mask">
+            <h2>Попробуйте греческую кухню в этом кафе. В Cavo Dimo стоит заказать аппетитные блины. Из окон здесь открывается 
+                красивый вид. Большинство гостей считают, что персонал здесь обходительный. Профессиональный сервис - большой плюс этого места.</h2>
+            <h3 style="margin-top: 50px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+
+    <div class="filter Restaurant reasonable-price" style="background-image: url(images/greece/restaurants/antilalos.jpg);" alt="img">
+        <h1>Antilalos</h1>
+        <a href="/inDev" title="Подробнее об Antilalos">
+        <div class="filter-mask">
+            <h2>После посещения этого кафе можно насладиться прогулкой с видом на Panayia Evanyelistria Cathedral and Museums. 
+                В Antilalos подают вкусное пиво. Здесь стоит попробовать неплохой кофе или хороший смузи.</h2>
+            <h3 style="margin-top: 0px">Нажмите, чтобы узнать подробнее</h3>
+        </div>
+        </a>
+    </div>
+</div>
+
+<footer class="footer-main">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h1 style="margin-left: 30px">Каталог стран</h1>
+          <ul style="margin-left: 30px">
+            <li><a href="/turkey" title="Подробнее о Турции">- Турция</a></li>
+            <li><a href="/oae" title="Подробнее об ОАЭ">- ОАЭ</a></li>
+            <li><a href="/egypt" title="Подробнее о Египте">- Египет</a></li>
+            <li><a class="country-active">- Греция</a></li>
+            <li><a href="/italy" title="Подробнее об Италии">- Италия</a></li>
+            <li><a href="/france" title="Подробнее о Франции">- Франция</a></li>
+            <li><a href="/china" title="Подробнее о Китае">- Китай</a></li>
+            <li><a href="/korea" title="Подробнее о Корее">- Корея</a></li>
+            <li><a href="/vietnam" title="Подробнее о Вьетнаме">- Вьетнам</a></li>
+            <li><a id="bottom" href="/japan" title="Подробнее о Японии">- Япония</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+            <h1>Компания</h1>
+            <ul>
+              <li><a href="/reviews" title="Напишите отзыв о нас">- Отзывы</a></li>
+              <li><a href="/aboutUs" title="Подробнее о компании">- О нас</a></li>
+              <li><a href="/feedback" title="Ссылка для связи с нами">- Обратная связь</a></li>
+              <li><a href="/qna" title="Ответы на часто задаваемые вопросы">- Q&A</a></li>
+            </ul>
+          </div>
+
+        <div class="footer-col">
+          <h1 style="margin-left: 30px">Партнёры</h1>
+          <ul style="margin-left: 30px">
+            <li><a href="https://www.tutu.ru" title="Ссылка на сайт Туту.ру">- Туту</a></li>
+            <li><a href="https://www.aviasales.ru" title="Ссылка на сайт Авиасейлс.ру">- Авиасейлс</a></li>
+            <li><a href="https://pegas-turistik.ru" title="Ссылка на сайт Пегас-Туристик.ру">- Пегас туристик</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h1>Контактная информация</h1>
+          <div class="social-links">
+            <a class="social-media" href="https://vk.com/nnbezgalochki" title="Группа компании ВКонтакте" target="_blank"><i class="fab fa-vk"></i></a>
+            <a class="social-media" href="https://web.telegram.org" title="Группа компании в телеграме" target="_blank"><i class="fa fa-solid fa-paper-plane"></i></a>
+            <a class="social-media" href="https://www.youtube.com" title="Канал компании на YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="social-media" href="https://ok.ru/" title="Группа компании в одноклассниках" target="_blank"><i class="fab fa-odnoklassniki"></i></a>
+            <h4 style="color: #fff; padding-bottom: 10px"><i class="fa fa-solid fa-envelope"></i> travel.ru@yandex.ru</h4>
+            <h4 style="color: #fff"><i class="fa fa-solid fa-phone"></i> +79876543210</h4>
+            <a href="/" title="Вернуться на Главную страницу" style="color: #fff; line-height: 70px; margin-left: 15 0px"><i class="fa fa-home"></i></a>
+            <a href="/sitemap" title="Просмотреть карту сайта" style="color: #fff; line-height: 70px;"><i class="fa fa-sitemap"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/search.js" defer></script>
+  <script src="/js/filters.js" defer></script>
+  <script src="/js/menu.js" defer></script>
+</body>
+</html>

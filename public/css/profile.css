@@ -1,0 +1,35 @@
+.mainWrapper {
+    transition: block;
+    display: grid;
+    grid-template-rows: 45vb 100px 20px 40vb;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vb;
+ }
+
+.mainContent {
+    background-color: rgb(59, 56, 45);
+    border-radius: 10px;
+    width: 1200px;
+    height: 300px;
+    margin: -110px auto;
+    display: grid;
+    grid-template-rows: 150px 150px;
+    grid-template-columns: 300px 900px;
+}
+
+.profilePhoto {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.profileText {
+    color: #fff;
+    margin: 50px 30px;
+}

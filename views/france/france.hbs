@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Трэвел.ру</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/css/countries.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="background_countries" id="background_main" style="background-image: url(images/france/main.jpg)" alt="img">
+    <h1 id="text-travel">Франция</h1>
+    <ul class="chain-links">
+        <li><a href="/" title="Переход на главную страницу">Главная</a></li>
+        <li>Франция</li>
+    </ul>
+    <header>
+        <nav class="container">
+            <a class="logo" href="/" title="Переход на главную страницу">
+            <img src="images/mainPage/logo.png" alt="img">
+            </a>
+            <div class="burger"><span></span></div>
+            <form id="searchform">
+                <input class="search-text" id="text-to-find" value="" placeholder="Искать на странице..">
+                <button class="clear-button" type="submit" onclick="FindOnPage('text-to-find',false); return false;"><i class="fa-solid fa-xmark"></i></button>
+                <button class="submit-button" type="submit" onclick="FindOnPage('text-to-find',true); return false;"><i class="fa fa-search"></i></button>
+            </form>
+            <ul id="menu">
+            <li><a class="menu_element" href="/" title="Вернуться главную страницу">Главная</a></li>
+            <li>
+                <a class="menu_element">Каталог стран</a>
+                <ul>
+                    <li><a href="/turkey" title="Подробнее о Турции">Турция</a></li>  <!-- менять -->
+                    <li><a href="/oae" title="Подробнее об ОАЭ">ОАЭ</a></li>
+                    <li><a href="/egypt" title="Подробнее о Египте">Египет</a></li>
+                    <li><a href="/greece" title="Подробнее о Греции">Греция</a></li>
+                    <li><a href="/italy" title="Подробнее об Италии">Италия</a></li>
+                    <li><a class="country-active" style="text-decoration: 1px underline;">Франция</a></li>
+                    <li><a href="/china" title="Подробнее о Китае">Китай</a></li>
+                    <li><a href="/korea" title="Подробнее о Корее">Корея</a></li>
+                    <li><a href="/vietnam" title="Подробнее о Вьетнаме">Вьетнам</a></li>
+                    <li><a href="/japan" title="Подробнее о Японии">Япония</a></li>
+                </ul>
+            </li>
+            <li><a class="menu_element" href="/#partners" title="Блок с ссылками на партнёров-спонсоров">Партнёры</a></li>
+            <li><a class="menu_element" href="/#reviews" title="Отзывы о компании">Отзывы</a></li>
+            <li>
+                <a class="menu_element">Компания</a>
+                <ul>
+                  <li><a href="/aboutUs" title="Подробнее о нашей компании">О нас</a></li>
+                  <li><a style="font-size: 18px" href="/feedback" title="Ссылка для связи с нами">Обратная связь</a></li>
+                  <li><a href="/qna" title="Ответы на часто задаваемые вопросы">Q&A</a></li>
+                </ul>
+              </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<a class="buttons-top-footer" id="toFooter" style="rotate: 180deg" href="#bottom" title="Перейти к низу страницы">^</a>
+<a class="buttons-top-footer" id="toTop" href="#background_main" title="Перейти к верху страницы">^</a>
+
+<h1 class="main-text">Краткая характеристика страны</h1>
+<div class="country-characteristics-container">
+<div class="country-characteristics-table">
+    <div class="cc-element"> 
+        <h1>Дата основания</h1>
+        <h2>{{foundation}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Официальный язык</h1>
+        <h2>{{lang}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Форма правления</h1>
+        <h2>{{government_form}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Территория</h1>
+        <h2>{{territory}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Население</h1>
+        <h2>{{population}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Столица</h1>
+        <h2>{{capital}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Валюта</h1>
+        <h2>{{currency}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Часовой пояс</h1>
+        <h2>{{time_zone}}</h2>
+    </div>
+    <div class="cc-element">
+        <h1>Крупнейшие города</h1>
+        <h2>{{largest_cities}}</h2>
+    </div>
+</div>
+<h2 class="country-info">{{country_info}}</h2>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text">Ближайшие авиарейсы</h1>
+<h2 style="max-width: 70vw; text-align: center; margin: 20px auto;">Прямые перелеты во Францию из России с февраля 2022 года временно приостановлены. Но полететь в страну можно с пересадками в других странах. 
+    Вы можете воспользоваться предложенным ниже маршрутом.</h2>
+<div style="display: flex; justify-content: center;">
+    <iframe class="avia-informer" src="https://rasp.yandex.ru/informers/v2/search/?fromId=c213&amp;toId=c11508&amp;size=5&amp;color=1"></iframe>
+    <iframe class="avia-informer" src="https://rasp.yandex.ru/informers/v2/search/?fromId=c11508&amp;toId=c10502&amp;size=5&amp;color=1"></iframe>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text" id="places-turkey">Туристические места Франции</h1> <!-- менять -->
+<div class="filters-buttons" id="filterPlaces-buttons">
+    <button class="filter-btn active" onclick="filterPlaceSelection('all')">Показать все</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('historical')">История</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('museums')">Музеи</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('parks')">Парки</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('fun')">Развлечения</button>
+    <button class="filter-btn" onclick="filterPlaceSelection('mountains')">Горы</button>
+</div>
+
+<div class="filters-container"> <!-- менять -->
+    <div class="filter Place historical museums parks fun mountains" style="background-image: url(images/mainPage/in-dev.jpg);" alt="img">
+        <h1>В разработке</h1>
+        <a>
+        <div class="filter-mask" style="min-height: 270px">
+            <h2>Данный раздел сайта находится в разработке. Он появится в ближайшее время.</h2>
+        </div>
+        </a>
+    </div>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text">Отели Франции</h1> <!-- менять -->
+<div class="filters-buttons" id="filterHotels-buttons">
+    <button class="filter-btn active" onclick="filterHotelSelection('all')">Показать все</button>
+    <button class="filter-btn" onclick="filterHotelSelection('all-inclusive')">Всё включено</button>
+    <button class="filter-btn" onclick="filterHotelSelection('breakfast-inclusive')">Завтрак включён</button>
+    <button class="filter-btn" onclick="filterHotelSelection('sea-visible')">Вид на море</button>
+    <button class="filter-btn" onclick="filterHotelSelection('3star')">3✩</button>
+    <button class="filter-btn" onclick="filterHotelSelection('4star')">4✩</button>
+    <button class="filter-btn" onclick="filterHotelSelection('5star')">5✩</button>
+</div>
+
+<div class="filters-container"> <!-- менять -->
+    <div class="filter Place historical museums parks fun mountains" style="background-image: url(images/mainPage/in-dev.jpg);" alt="img">
+        <h1>В разработке</h1>
+        <a>
+        <div class="filter-mask" style="min-height: 270px">
+            <h2>Данный раздел сайта находится в разработке. Он появится в ближайшее время.</h2>
+        </div>
+        </a>
+    </div>
+</div>
+<div class="filter-split-line"></div>
+
+<h1 class="main-text">Рестораны Франции</h1> <!-- менять -->
+<div class="filters-buttons" id="filterRestaurants-buttons">
+    <button class="filter-btn active" onclick="filterRestaurantSelection('all')">Показать все</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('seafood')">Морепродукты</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('traditional-kitchen')">Традиционная кухня</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('expensive')">$$$</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('reasonable-price')">$$</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('cheap')">$</button>
+    <button class="filter-btn" onclick="filterRestaurantSelection('fast-food')">Фаст-фуд</button>
+</div>
+
+<div class="filters-container"> <!-- менять -->
+    <div class="filter Place historical museums parks fun mountains" style="background-image: url(images/mainPage/in-dev.jpg);" alt="img">
+        <h1>В разработке</h1>
+        <a>
+        <div class="filter-mask" style="min-height: 270px">
+            <h2>Данный раздел сайта находится в разработке. Он появится в ближайшее время.</h2>
+        </div>
+        </a>
+    </div>
+</div>
+
+<footer class="footer-main">
+    <div class="footer-container">
+      <div class="footer-row">
+        <div class="footer-col">
+          <h1 style="margin-left: 30px">Каталог стран</h1>
+          <ul style="margin-left: 30px">
+            <li><a href="/turkey" title="Подробнее о Турции">- Турция</a></li>
+            <li><a href="/oae" title="Подробнее об ОАЭ">- ОАЭ</a></li>
+            <li><a href="/egypt" title="Подробнее о Египте">- Египет</a></li>
+            <li><a href="/greece" title="Подробнее о Греции">- Греция</a></li>
+            <li><a href="/italy" title="Подробнее об Италии">- Италия</a></li>
+            <li><a class="country-active">- Франция</a></li>
+            <li><a href="/china" title="Подробнее о Китае">- Китай</a></li>
+            <li><a href="/korea" title="Подробнее о Корее">- Корея</a></li>
+            <li><a href="/vietnam" title="Подробнее о Вьетнаме">- Вьетнам</a></li>
+            <li><a id="bottom" href="/japan" title="Подробнее о Японии">- Япония</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+            <h1>Компания</h1>
+            <ul>
+              <li><a href="/reviews" title="Напишите отзыв о нас">- Отзывы</a></li>
+              <li><a href="/aboutUs" title="Подробнее о компании">- О нас</a></li>
+              <li><a href="/feedback" title="Ссылка для связи с нами">- Обратная связь</a></li>
+              <li><a href="/qna" title="Ответы на часто задаваемые вопросы">- Q&A</a></li>
+            </ul>
+          </div>
+
+        <div class="footer-col">
+          <h1 style="margin-left: 30px">Партнёры</h1>
+          <ul style="margin-left: 30px">
+            <li><a href="https://www.tutu.ru" title="Ссылка на сайт Туту.ру">- Туту</a></li>
+            <li><a href="https://www.aviasales.ru" title="Ссылка на сайт Авиасейлс.ру">- Авиасейлс</a></li>
+            <li><a href="https://pegas-turistik.ru" title="Ссылка на сайт Пегас-Туристик.ру">- Пегас туристик</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h1>Контактная информация</h1>
+          <div class="social-links">
+            <a class="social-media" href="https://vk.com/nnbezgalochki" title="Группа компании ВКонтакте" target="_blank"><i class="fab fa-vk"></i></a>
+            <a class="social-media" href="https://web.telegram.org" title="Группа компании в телеграме" target="_blank"><i class="fa fa-solid fa-paper-plane"></i></a>
+            <a class="social-media" href="https://www.youtube.com" title="Канал компании на YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="social-media" href="https://ok.ru/" title="Группа компании в одноклассниках" target="_blank"><i class="fab fa-odnoklassniki"></i></a>
+            <h4 style="color: #fff; padding-bottom: 10px"><i class="fa fa-solid fa-envelope"></i> travel.ru@yandex.ru</h4>
+            <h4 style="color: #fff"><i class="fa fa-solid fa-phone"></i> +79876543210</h4>
+            <a href="/" title="Вернуться на Главную страницу" style="color: #fff; line-height: 70px; margin-left: 15 0px"><i class="fa fa-home"></i></a>
+            <a href="/sitemap" title="Просмотреть карту сайта" style="color: #fff; line-height: 70px;"><i class="fa fa-sitemap"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/search.js" defer></script>
+  <script src="/js/filters.js" defer></script>
+  <script src="/js/menu.js" defer></script>
+</body>
+</html>

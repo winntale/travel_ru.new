@@ -1,0 +1,67 @@
+.background_main {
+    grid-template-rows: 25vb 70px 50px 40vb 25vb;
+}
+
+#text-travel {
+    font-size: 70px;
+}
+
+.regContent {
+    width: 700px;
+    height: 250px;
+    margin: 0 auto;
+    transition: block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    grid-row: 4;
+}
+
+.reg-elem {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.form-control {
+    font-family: 'Doloman_Pavljenko';
+    font-size: 30px;
+}
+
+.btn-primary {
+    font-family: 'Doloman_Pavljenko';
+    width: 300px;
+    margin: 20px 200px;
+    transition: block;
+    background-color: #686868;
+    border-radius: 15px;
+    font-size: 38px;
+    padding: 10px 5px 10px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    transition: .3s;
+    background-color: #3f3f3f;
+    cursor: pointer;
+}
+
+.reg-msg {
+    color: #fff;
+    margin: -20px auto;
+}
+
+.reg-text {
+    margin: 630px auto;
+    color: #fff;
+}
+
+.auth-btn {
+    text-decoration:underline;
+    color: #898fd3;
+}
+
+.auth-btn:hover {
+    color: #4750af;
+    text-decoration: none;
+}

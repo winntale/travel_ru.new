@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трэвел.ру</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+
+<body id="veryTop">
+    <header>
+        <nav class="container">
+        <a class="logo" href="/" title="Переход на главную страницу">
+            <img src="/images/mainPage/logo.png" alt="img">
+        </a>
+        <div class="burger"><span></span></div>
+        <form id="searchform">
+            <a class="authBtn" href="/register" title="Войти/Зарегистрироваться"><i class="fa-solid fa-user"></i></a>
+            <input class="search-text" id="text-to-find" value="" placeholder="Искать на странице..">
+            <button class="clear-button" type="submit" onclick="FindOnPage('text-to-find',false); return false;"><i class="fa-solid fa-xmark"></i></button>
+            <button class="submit-button" type="submit" onclick="FindOnPage('text-to-find',true); return false;"><i class="fa fa-search"></i></button>
+        </form>
+        <ul id="menu">
+            <li><a class="menu_element" href="/" title="Вернуться главную страницу">Главная</a></li>
+            <li>
+            <a class="menu_element">Каталог стран</a>
+            <ul>
+                <li><a href="/#background_turkey" title="Турция в каталоге стран">Турция</a></li>
+                <li><a href="/#background_oae" title="ОАЭ в каталоге стран">ОАЭ</a></li>
+                <li><a href="/#background_egypt" title="Египет в каталоге стран">Египет</a></li>
+                <li><a href="/#background_greece" title="Греция в каталоге стран">Греция</a></li>
+                <li><a href="/#background_italy" title="Италия в каталоге стран">Италия</a></li>
+                <li><a href="/#background_france" title="Франция в каталоге стран">Франция</a></li>
+                <li><a href="/#background_china" title="Китай в каталоге стран">Китай</a></li>
+                <li><a href="/#background_korea" title="Корея в каталоге стран">Корея</a></li>
+                <li><a href="/#background_vietnam" title="Вьетнам в каталоге стран">Вьетнам</a></li>
+                <li><a href="/#background_japan" title="Япония в каталоге стран">Япония</a></li>
+            </ul>
+            </li>
+            <li><a class="menu_element" href="/#partners" title="Блок с ссылками на партнёров-спонсоров">Партнёры</a></li>
+            <li><a class="menu_element" href="/#reviews" title="Отзывы о компании">Отзывы</a></li>
+            <li>
+            <a class="menu_element">Компания</a>
+            <ul>
+                <li><a href="/aboutUs" title="Подробнее о нашей компании">О нас</a></li>
+                <li><a href="/feedback" title="Ссылка для связи с нами">Feedback</a></li>
+                <li><a href="/qna" title="Ответы на часто задаваемые вопросы">Q&A</a></li>
+            </ul>
+            </li>
+        </ul>
+        </nav>
+    </header>
+
+    <div class="mainWrapper" style="background-image: url(/images/profile/main.jpg)">
+        <div class="marginTop"></div>
+        <div class="mainContent">
+            <img class="profilePhoto" src="/images/mainPage/profileIMG.jpg"></img>
+            <h1 class="profileText">Ваше имя: {{#if name}}{{name}}{{^}}Без имени{{/if}}
+            </h1>
+            <h1 class="profileText">Ваш e-mail: {{email}} <h1>
+        </div>
+    </div>
+</body>
+</html>

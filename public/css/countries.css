@@ -1,0 +1,251 @@
+.background_countries {
+    transition: block;
+    display: grid;
+    grid-template-rows: 45vb 150px 45px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 70vb;
+ }
+
+#text-travel {
+    transition: block;
+    grid-row: 2;
+    font-size: 130px;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 15px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+.main-text {
+    text-align: center;
+    font-size: 80px;
+    padding: 30px 0;
+    font-weight: bold;
+}
+
+.chain-links {
+    list-style: none;
+    background-color: transparent;
+    grid-row: 3;
+    margin-left: 50px;
+}
+
+.chain-links li {
+    display: inline;
+    font-size: 26px;
+    color: #bba8a8;
+}
+
+.chain-links li+li:before {
+    padding: 8px;
+    color: #ffffff;
+    content: "/\00a0";
+}
+
+.chain-links li a {
+    color: #dfdfdf;
+    text-decoration: none;
+}
+
+.chain-links li a:hover {
+    transition: .1s;
+    color: #cecece;
+    text-decoration: underline;
+}
+
+/* Краткая характеристика страны */
+
+.country-characteristics-container {
+    max-width: 98vw;
+}
+
+.country-info {
+    text-align: center;
+    font-size: 30px;
+    max-width: 84vw;
+    margin: 20px auto;
+}
+
+.country-characteristics-table {
+    display: flex;
+    max-width: 50%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cc-element {
+    float: left;
+    background-color: #cfcfcf;
+    color: #000000;
+    width: 266px;
+    height: 133px;
+    text-align:center;
+    border: 1px solid #e6e6e6;
+    border-radius: 7px;
+}
+
+.cc-element h1 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-top: 30px;
+}
+
+.cc-element h2 {
+    font-size: 18px;
+}
+
+.country-active {
+    font-weight: bold;
+    color: #d1d1d1;
+    cursor: default
+}
+
+.country-active:hover {
+    color: #d1d1d1;
+}
+
+/* фильтры */
+
+.filters-buttons {
+    max-width: 98vw;
+    min-height: 13vb;
+    margin-left: 60px;
+}
+
+.filter-btn {
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 20px 25px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-family: 'Doloman_Pavljenko';
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #b9b9b9;
+}
+
+.filter-btn.active {
+    background-color: #666;
+    color: white;
+}
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-split-line {
+    background-color: #e91e63;
+    height: 3px;
+    width: 300px;
+    margin: 10px auto;
+}
+
+.filter {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 266px;
+    height: 333px;
+    line-height: 66px;
+    text-align: center;
+    display: none;
+    margin: 15px;
+}
+
+.filter h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.filter:hover {
+    transition-duration: .5s;
+    transform: scale(1.05);
+}
+
+.filter-show {
+    display: block;
+}
+
+.filter-mask {
+    opacity: 0;
+    text-align: left;
+    color: transparent;
+}
+
+.filter-mask:hover {
+    transition-duration: .3s;
+    opacity: 1;
+    color: #fff;
+}
+
+.filter-mask h2 {
+    margin-left: 15px;
+    line-height: 16.6px;
+    font-size: 20px;
+}
+
+.filter-mask h3 {
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    font-size: 14.6px;
+    font-style: italic;
+}
+
+.avia-informer {
+    overflow: hidden;
+    border: 0;
+    width: 40vw;
+    height: 351px;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+/* медиа */
+
+@media (max-aspect-ratio: 10/9) {
+    #text-travel {
+        font-size: 90px;
+    }
+
+    .main-text {
+        font-size: 50px;
+    }
+
+    .country-info {
+        font-size: 24px;
+        max-width: 75vw;
+    }
+
+    .cc-element {
+        width: 133px;
+        height: 66.5px;
+    }
+
+    .cc-element h1 {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 18px;
+        margin-top: 15px;
+    }
+    
+    .cc-element h2 {
+        font-size: 14px;
+    }
+
+    .country-characteristics-table {
+        max-width: 75%;
+    }
+}
